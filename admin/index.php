@@ -35,7 +35,7 @@
     <h3 class="text-center p-3">DashBoard</h3>
 
     <div class="row">
-      <div class="col-md-12 bg-dark p-3">
+      <div class="col-md-12 bg-dark p-3 mb-3">
         <div class="button text-center">
 
           <button class="bg-primary btn btn-outline-light">
