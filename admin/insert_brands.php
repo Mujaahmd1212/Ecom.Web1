@@ -2,19 +2,25 @@
 include('../includes/connection.php'); 
 
 if(isset($_POST['insert_brand'])){
-
   $brand_title=$_POST['brand_title'];
 
-  $insert_query="INSERT INTO `brands_tb`(brand_name)VALUES('$brand_title')";
+  //Check For Duplicates
+  $select_Query="SELECT * FROM `brands_tb` WHERE brand_name='$brand_title'";
+  $runSelectQuery=mysqli_query($con, $select_Query);
+  $countRows=mysqli_num_rows($runSelectQuery);
 
-  $run=mysqli_query($con, $insert_query);
+  if($countRows>0){
+    echo "<script>alert('This Brand Is Already Inserted')</script>";
+  }
+  else{
+
+  $insert_Query="INSERT INTO `brands_tb`(brand_name)VALUES('$brand_title')";
+  $run=mysqli_query($con, $insert_Query);
 
   if($run){
     echo "<script> alert ('brand inserted Sucessfully')</script>";
+    }
   }
-
-
-
 }
 ?>
 

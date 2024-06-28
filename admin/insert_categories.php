@@ -2,23 +2,29 @@
 include('../includes/connection.php');
 
 if(isset($_POST['insert_cat'])){
-
   $cat_title=$_POST['cat_title'];
 
   //SQL Query
-$insert_query="INSERT INTO `categories_tb`(category_name)VALUES('$cat_title')";
+  //Check For Duplicates
+  $select_query= "SELECT * FROM `categories_tb`WHERE category_name='$cat_title'";
+  $runSelectQuery=mysqli_query($con, $select_query);
+  $countRows=mysqli_num_rows($runSelectQuery);
 
+  if($countRows>0){
+    echo "<script>alert('category was already inserted')</script>";
+  }
+
+  else{
+$insert_query="INSERT INTO `categories_tb`(category_name)VALUES('$cat_title')";
 $run=mysqli_query($con, $insert_query);
 
 if($run){
   echo "<script>alert('Category successfully inserted')</script>";
+        }
+
+      }
 
 }
-
-}
-
-
-
 
 ?>
 
