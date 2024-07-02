@@ -6,11 +6,11 @@ if(isset($_POST['insert_cat'])){
 
   //SQL Query
   //Check For Duplicates
-  $select_query= "SELECT * FROM `categories_tb`WHERE category_name='$cat_title'";
-  $runSelectQuery=mysqli_query($con, $select_query);
-  $countRows=mysqli_num_rows($runSelectQuery);
+  $select_query= "SELECT * FROM `categories_tb`WHERE category_name='$cat_title'";//Duplicate Checker
+  $runSelectQuery=mysqli_query($con, $select_query);//Duplicate Checker
+  $countRows=mysqli_num_rows($runSelectQuery);//For Duplicate
 
-  if($countRows>0){
+  if($countRows>0){//Duplicate checker
     echo "<script>alert('category was already inserted')</script>";
   }
 

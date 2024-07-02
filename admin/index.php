@@ -39,7 +39,7 @@
         <div class="button text-center">
 
           <button class="bg-primary btn btn-outline-light">
-            <a href="index.php?insert_products" class="nav-link text-light  ">Insert Products</a>
+            <a href="insert_products.php" class="nav-link text-light  ">Insert Products</a>
           </button>
 
           <button class="bg-primary btn btn-outline-light">
