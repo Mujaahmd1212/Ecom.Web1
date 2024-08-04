@@ -4,6 +4,13 @@ include('./includes/connection.php');
 //Get products functions
 function getproducts(){
   global $con;
+
+  // check isset condition to see user has clicked brands or categories
+  if(!isset($_GET['brand'])){
+    if(!isset($_GET['category'])){
+
+    
+
   $select_query = "SELECT * FROM `products_tb` ORDER BY RAND()";
     $run_select_query = mysqli_query($con, $select_query);
 
@@ -29,8 +36,11 @@ function getproducts(){
                   </div>
                 </div>
               </div>";
+      }
     }
+  }
 }
+
   //brands
 function getbrands(){
 global $con;
