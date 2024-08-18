@@ -11,7 +11,8 @@ include('./Functions/common_functions.php');
   <title>Ecom.com</title>
 
 <!--Bootsrap V5.3-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+
 
   <!--Fontawesome Link-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -40,12 +41,11 @@ include('./Functions/common_functions.php');
           <a class="nav-link" href="#">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>04</sup></a>
+          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>0<?php cart_item_count();?></sup></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Total:2500 Rs</a>
         </li>
-        
       </ul>
       <form class="d-flex" action="search_products.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data_txt">
@@ -56,6 +56,10 @@ include('./Functions/common_functions.php');
 </nav>
 <!--nav bar End-->
 
+<!--call cart function-->
+<?php
+  cart();
+?>
 <!--content area-->
 <div>
   <h2 class="text-center">Welcome to ATOM.Lk </h3>
